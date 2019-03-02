@@ -1,0 +1,14 @@
+<div id="order">
+  <h3>訂單說明</h3>
+  <p>
+    加入訂單後若出現可以刪除按鈕代表隨時可以刪除，若出現綠色小勾勾表示我已經收到您的訂單，在開始準備你的商品了，如果這時候想要取消訂單，請再使用
+    <span class="bold">唉居</span>或
+    <span class="bold">賴</span>跟我說。
+  </p>
+  <Table :columns="columns" :data="oreders" no-data-text="目前沒有你的訂單，趕快去加入訂單吧!">
+    <template slot-scope="{ row, index }" slot="action">
+      <Icon v-if="status" type="md-checkmark-circle" color="#2ecc71" size="24"/>
+      <Button v-else type="error" size="small" @click="remove(index)">刪除</Button>
+    </template>
+  </Table>
+</div>

@@ -1,0 +1,43 @@
+@import '@/assets/_variable.scss';
+
+#prod {
+  margin: 1.2rem 1rem;
+}
+#user {
+  display: flex;
+  align-items: center;
+  margin: 0 0 1.2rem;
+  div {
+    font-size: 1.1rem;
+    margin-left: 0.6rem;
+  }
+}
+.card {
+  margin-bottom: 1rem;
+  .img_wrap {
+    text-align: center;
+    img {
+      width: 200px;
+      height: 250px;
+    }
+  }
+  p {
+    line-height: 1.8;
+    font-size: 1rem;
+  }
+  #price {
+    span {
+      font-weight: bold;
+      color: $page_black_light;
+      font-size: 1.2rem;
+    }
+  }
+  #btn {
+    margin-top: 2rem;
+  }
+}
+.modal {
+  p {
+    margin-top: 1rem;
+  }
+}

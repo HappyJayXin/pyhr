@@ -5,11 +5,11 @@ Vue.use(Router);
 
 function loadView(view) {
   return () =>
-    import(/* webpackChunkName: "view-[request]" */ `@/views/${view}.vue`);
+    import(/* webpackChunkName: "view-[request]" */ `@/views/${view}/${view}.vue`);
 }
 
 export default new Router({
-  mode: "history",
+  // mode: "history",
   base: process.env.BASE_URL,
   routes: [
     { path: "/", redirect: { name: "prod" } },
