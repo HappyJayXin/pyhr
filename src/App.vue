@@ -82,7 +82,7 @@ export default {
     var getFire = new Promise(reslove => {
       firebase
         .database()
-        .ref("order")
+        .ref(localStorage.getItem("person"))
         .on("value", function(snapshot) {
           if (!snapshot.val()) return;
           reslove(snapshot.val());

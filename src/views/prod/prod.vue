@@ -9,12 +9,20 @@ export default {
       person_name: "",
       prods: [
         {
-          productName: "粉玫瑰有機洗髮精",
+          productName: "超好用手機01",
           description:
-            "純淨粉玫瑰精油與歐盟ECOCERT有機認證起泡成分，能潔淨毛燥受損秀髮，迷迭香萃取物有效收斂髮絲，草本精華提供頭髮和頭皮深層的保溼潤澤。",
+            "由超好用手機前海外副總裁王曉明創立的全新手機品牌【Min】，正式發表了最新款的超好用手機 3 及手機殼產品。身為超好用手機手機的第三款產品，不僅將延續超好用手機 1 和超好用手機 2 的模式，還將進一步在性能、設計方面升級，為年輕消費者帶來不一樣的產品體驗。",
           imgs: ["product01", "product02"],
-          priceDescription: "一瓶+補充包",
-          price: 1290
+          priceDescription: "一臺",
+          price: 12000
+        },
+        {
+          productName: "超好用手機02",
+          description:
+            "由超好用手機前海外副總裁王曉明創立的全新手機品牌【Min】，正式發表了最新款的超好用手機 3 及手機殼產品。身為超好用手機手機的第三款產品，不僅將延續超好用手機 1 和超好用手機 2 的模式，還將進一步在性能、設計方面升級，為年輕消費者帶來不一樣的產品體驗。",
+          imgs: ["product03", "product04"],
+          priceDescription: "一臺",
+          price: 8000
         }
       ]
     };
@@ -29,7 +37,9 @@ export default {
 
       const order = {
         productName: this.prods[index]["productName"],
-        price: this.prods[index]["price"]
+        price: this.prods[index]["price"],
+        name: this.$store.state.person_name,
+        index: this.make_index()
       };
 
       if (!localStorage.getItem("person")) {
@@ -51,14 +61,8 @@ export default {
         this.add_to_firebase(order);
       }
     },
-    add_to_firebase({ productName, price }) {
-      var obj = {
-        name: this.$store.state.person_name,
-        price: price,
-        productname: productName,
-        index: this.make_index()
-      };
-      this.$store.commit("ADD_ORDER", obj); // update local data
+    add_to_firebase(order) {
+      this.$store.commit("ADD_ORDER", order); // update local data
       // update firebase data
       firebase
         .database()
