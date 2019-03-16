@@ -1,5 +1,8 @@
 # pyhr
 
+## A project business app
+可以下訂單，結合firebase。
+
 ## Project setup
 ```
 npm install
