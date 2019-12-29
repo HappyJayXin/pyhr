@@ -10,12 +10,12 @@ import firebase from "firebase/app";
 
 // Initialize Firebase
 var config = {
-  apiKey: "AIzaSyCNmyDiS5Sh-BPJ6o9ePI-4aIDHp6M7qhU",
-  authDomain: "pyhr-5278.firebaseapp.com",
-  databaseURL: "https://pyhr-5278.firebaseio.com",
-  projectId: "pyhr-5278",
-  storageBucket: "pyhr-5278.appspot.com",
-  messagingSenderId: "114577344368"
+  apiKey: "YOUR_KEYS",
+  authDomain: "YOUR_DOMAIN",
+  databaseURL: "URL",
+  projectId: "YOUR_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "ID"
 };
 firebase.initializeApp(config);
 
